@@ -8,6 +8,18 @@ log_file = [
    "ERROR: Database connection failed",
 ]
 
-for line in log_file:
-    if "ERROR" in line:
-        print(line)
+# for line in log_file:
+#     if "ERROR" in line:
+#         print(line)
+
+#BREAK
+lst = [1, 2, 3, 4, 5]
+for number in lst:
+    if number == 4:
+        break
+    print(number)
+
+# WHILE
+    
+
+
