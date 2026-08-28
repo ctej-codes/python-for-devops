@@ -13,13 +13,16 @@ log_file = [
 #         print(line)
 
 #BREAK
-lst = [1, 2, 3, 4, 5]
-for number in lst:
-    if number == 4:
-        break
-    print(number)
+# lst = [1, 2, 3, 4, 5]
+# for number in lst:
+#     if number == 4:
+#         break
+#     print(number)
 
 # WHILE
-    
+count = 0
+while count < 10:
+    print(count)   
+    count+=1
 
 
