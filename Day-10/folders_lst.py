@@ -10,4 +10,5 @@ for folder in folders_lst:
             print(file)
     except FileNotFoundError:
         print("Enter a valid folder name", "as", folder, "is not found")
+    ece
         continue
