@@ -44,3 +44,35 @@ if response.status_code == 200:
 
 else:
     print(f"Details not found. Status code: {response.status_code}")
+
+###################################################
+# The same program using function implementation
+import requests
+
+
+def get_pr_details():
+    url = "https://api.github.com/repos/kubernetes/kubernetes/pulls"
+
+    response = requests.get(url)
+
+    if response.status_code != 200:
+        return None
+
+    pull_request_details = response.json()
+
+    creator_pr_details = {}
+
+    for pr in pull_request_details:
+        creator = pr["user"]["login"]
+        creator_pr_details[creator] = creator_pr_details.get(creator, 0) + 1
+
+    return creator_pr_details
+
+
+pr_details = get_pr_details()
+
+if pr_details:
+    for creator, count in pr_details.items():
+        print(f"{creator}: {count} PR(s)")
+else:
+    print("Failed to fetch PR details")    
